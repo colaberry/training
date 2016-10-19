@@ -89,11 +89,11 @@ cd "C:\Program Files (x86)\MySQL\MySQL Installer for Windows"
 
 if ($os_type -eq "True")
 {
-    Start-Process -FilePath 'C:\Program Files (x86)\MySQL\MySQL Installer for Windows\MySQLInstallerConsole.exe' -ArgumentList 'community install server;5.7.16;x64:*:type=config;openfirewall=true;generallog=true;binlog=true;serverid=3306;enable_tcpip=true;port=3306;rootpasswd=passw0rd -silent' -Wait
+    Start-Process -FilePath 'C:\Program Files (x86)\MySQL\MySQL Installer for Windows\MySQLInstallerConsole.exe' -ArgumentList 'community install server;5.7.16;x64 -silent' -Wait
     Start-Process -FilePath 'C:\Program Files (x86)\MySQL\MySQL Installer for Windows\MySQLInstallerConsole.exe' -ArgumentList 'community install workbench;6.3.7;x64 -silent' -Wait
 }else 
 {
-    Start-Process -FilePath 'C:\Program Files (x86)\MySQL\MySQL Installer for Windows\MySQLInstallerConsole.exe' -ArgumentList 'community install server;5.7.16;x86:*:type=config;openfirewall=true;generallog=true;binlog=true;serverid=3306;enable_tcpip=true;port=3306;rootpasswd=passw0rd -silent' -Wait
+    Start-Process -FilePath 'C:\Program Files (x86)\MySQL\MySQL Installer for Windows\MySQLInstallerConsole.exe' -ArgumentList 'community install server;5.7.16;x86 -silent' -Wait
     Start-Process -FilePath 'C:\Program Files (x86)\MySQL\MySQL Installer for Windows\MySQLInstallerConsole.exe' -ArgumentList 'community install workbench;6.3.7;x86 -silent' -Wait
 }
 
@@ -135,8 +135,8 @@ if((Test-Path "$setupFolder\installations\utils\GitHubSetup.exe") -eq $false)
 
 # Github doesn't support silent install, as it is distributed via .NET Click Once deployment option
 # User interaction needed to continue the setup.
-Write-Host "Installing Github.."
-Start-Process -FilePath "$setupFolder\installations\utils\GitHubSetup.exe" -Wait
+# Write-Host "Installing Github.."
+# Start-Process -FilePath "$setupFolder\installations\utils\GitHubSetup.exe" -Wait
 
 if((Test-Path "C:\Program Files\MySQL\MySQL Server 5.7") -eq $false)
 {
@@ -147,4 +147,5 @@ cd $currentPath
 
 # Manual Steps
 # 1. Makesure Github for Windows is installed
-# 2. If for any reason, the MySQL Server didn't get installed, run the same command from PowerShell ISE or command prompt 
+# 2. If for any reason, the MySQL Server didn't get installed, run the same command from PowerShell ISE or command prompt.
+# 3. Run MySQL Installer to configure
