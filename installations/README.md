@@ -1,12 +1,13 @@
 # Applications
 The following applications are needed for the program. Some applications like Atom are not mandatory, 
 you may use a similar IDE of your preference.
-* Tableau 10.0
-* MySQL Server
-* MySQL Workbench
-* Python
-* Atom
-* Github
+
+* [Tableau 10.0](http://www.tableau.com/support/esdalt)
+* [MySQL Server](https://dev.mysql.com/downloads/installer/)
+* [MySQL Workbench](https://dev.mysql.com/downloads/installer/)
+* [Python 2.7.x](https://www.python.org/downloads/)
+* [Atom](https://atom.io/)
+* [Github Desktop](https://desktop.github.com/)
 
 ## Installing on Windows
 To download and install all applications needed on Windows, you may use the attached Powershell script. 
