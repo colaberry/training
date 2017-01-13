@@ -71,11 +71,6 @@ if((Test-Path "$setupFolder\ConfigurationFile.ini") -eq $false)
     }    
 }
 
-(Get-Content $setupFolder\ConfigurationFile.ini).replace('USERNAMETBR', '$env:computername\$env:username') | Set-Content $setupFolder\ConfigurationFile.ini
-
-Write-Host "Installing SQL Server.."
-Start-Process -FilePath "$setupFolder\SQLServer2016-SSEI-Dev.exe" -ArgumentList /ConfigurationFile=$($setupFolder)\ConfigurationFile.ini, /MediaPath=$($setupFolder), '/IAcceptSqlServerLicenseTerms', '/ENU'  -Wait
-
 # SSMS Installation 
 if((Test-Path "$setupFolder\SSMS-Setup-ENU.exe") -eq $false)
 {
@@ -86,9 +81,6 @@ if((Test-Path "$setupFolder\SSMS-Setup-ENU.exe") -eq $false)
         Write-Host "32 Bit system is not supported"
     }    
 }
-Write-Host "Installing SSMS.."
-Start-Process -FilePath "$setupFolder\SSMS-Setup-ENU.exe" -ArgumentList '/install','/passive' -Wait
-
 
 # SSDT Installation 
 if((Test-Path "$setupFolder\SSDTSetup.exe") -eq $false)
@@ -100,9 +92,6 @@ if((Test-Path "$setupFolder\SSDTSetup.exe") -eq $false)
         Write-Host "32 Bit system is not supported"
     }    
 }
-
-Write-Host "Installing SSDT.."
-Start-Process -FilePath "$setupFolder\SSDTSetup.exe" -ArgumentList '/INSTALLALL=1', '/passive', '/promptrestart' -Wait
 
 # Download Adventureworks
 # AdventureWorks2012_Data.mdf
@@ -116,6 +105,17 @@ if((Test-Path "$setupFolder\AdventureWorks2012_Data.mdf") -eq $false)
         Write-Host "32 Bit system is not supported"
     }    
 }
+
+(Get-Content $setupFolder\ConfigurationFile.ini).replace('USERNAMETBR', '$env:computername\$env:username') | Set-Content $setupFolder\ConfigurationFile_local.ini
+
+Write-Host "Installing SQL Server.."
+Start-Process -FilePath "$setupFolder\SQLServer2016-SSEI-Dev.exe" -ArgumentList /ConfigurationFile=$($setupFolder)\ConfigurationFile_local.ini, /MediaPath=$($setupFolder), '/IAcceptSqlServerLicenseTerms', '/ENU'  -Wait
+
+Write-Host "Installing SSMS.."
+Start-Process -FilePath "$setupFolder\SSMS-Setup-ENU.exe" -ArgumentList '/install','/passive' -Wait
+
+Write-Host "Installing SSDT.."
+Start-Process -FilePath "$setupFolder\SSDTSetup.exe" -ArgumentList '/INSTALLALL=1', '/passive', '/promptrestart' -Wait
 
 Add-PSSnapin SqlServerCmdletSnapin* -ErrorAction SilentlyContinue   
 Import-Module SQLPS -WarningAction SilentlyContinue  
