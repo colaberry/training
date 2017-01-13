@@ -71,10 +71,10 @@ if((Test-Path "$setupFolder\ConfigurationFile.ini") -eq $false)
     }    
 }
 
-(Get-Content $setupFolder\ConfigurationFile.ini).replace('USERNAMETBR', $env:computername\$env:username) | Set-Content $setupFolder\ConfigurationFile.ini
+(Get-Content $setupFolder\ConfigurationFile.ini).replace('USERNAMETBR', '$env:computername\$env:username') | Set-Content $setupFolder\ConfigurationFile.ini
 
 Write-Host "Installing SQL Server.."
-Start-Process -FilePath "$setupFolder\SQLServer2016-SSEI-Dev.exe" -ArgumentList '/ConfigurationFile="$setupFolder\ConfigurationFile.ini"', '/MediaPath="$setupFolder"', '/IAcceptSqlServerLicenseTerms', '/ENU'  -Wait
+Start-Process -FilePath "$setupFolder\SQLServer2016-SSEI-Dev.exe" -ArgumentList /ConfigurationFile=$($setupFolder)\ConfigurationFile.ini, /MediaPath=$($setupFolder), '/IAcceptSqlServerLicenseTerms', '/ENU'  -Wait
 
 # SSMS Installation 
 if((Test-Path "$setupFolder\SSMS-Setup-ENU.exe") -eq $false)
@@ -109,7 +109,7 @@ Start-Process -FilePath "$setupFolder\SSDTSetup.exe" -ArgumentList '/INSTALLALL=
 # https://msftdbprodsamples.codeplex.com/downloads/get/165399
 if((Test-Path "$setupFolder\AdventureWorks2012_Data.mdf") -eq $false)
 {
-    Write-Host "Downloading SSDT installation file.."
+    Write-Host "Downloading Adventuresworks data file.."
     if ($os_type -eq "True"){
         Download-File "https://msftdbprodsamples.codeplex.com/downloads/get/165399" "$setupFolder\AdventureWorks2012_Data.mdf"
     }else {
@@ -134,4 +134,3 @@ else
 }
 
 
- 
