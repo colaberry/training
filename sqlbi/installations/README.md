@@ -34,5 +34,11 @@ You will see the log in the blue pane as the script executes.
 It may require a restart once SQL Server is installed. When prompted, restart the computer and re-run the script. When the script is re-run, you may see the following error, that just states that all features have been already installed.
 ![Reinstall error](reinstall_error.png "Re-install Error")
 ---
+
+### Sample Status Log
+Please see the screenshot below for a sample status log. As you can see, some of the intermediate errors while attaching the sample database can be ignored.
+![Reinstall error](log.png "Status log")
+
+
 ## Installing on Mac
 SQL Server 2016 installation is NOT supported on Mac. You may install Windows on Mac using Parallels Desktop or VMWare Fusion or similar application first and then use the script to install all applications.
