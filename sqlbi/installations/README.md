@@ -29,8 +29,10 @@ You can also arbitrarily run other commands from the shell.
 * Now you can click on green forward (Play) button in the toolbar to run the script. Or just simply press "F5".
 You will see the log in the blue pane as the script executes.
 
+---
 ### Restart may be required
-It may require a restart once SQL Server is installed. When prompted, restart the computer and re-run the script.
-
+It may require a restart once SQL Server is installed. When prompted, restart the computer and re-run the script. When the script is re-run, you may see the following error, that just states that all features have been already installed.
+![Reinstall error](reinstall_error.png "Re-install Error")
+---
 ## Installing on Mac
 SQL Server 2016 installation is NOT supported on Mac. You may install Windows on Mac using Parallels Desktop or VMWare Fusion or similar application first and then use the script to install all applications.
