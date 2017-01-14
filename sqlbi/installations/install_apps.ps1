@@ -96,11 +96,11 @@ if((Test-Path "$setupFolder\SSDTSetup.exe") -eq $false)
 # Download Adventureworks
 # AdventureWorks2012_Data.mdf
 # https://msftdbprodsamples.codeplex.com/downloads/get/165399
-if((Test-Path "$setupFolder\AdventureWorks2012_Data.mdf") -eq $false)
+if((Test-Path "$setupFolder\..\datasets\AdventureWorks2012_Data.mdf") -eq $false)
 {
     Write-Host "Downloading Adventuresworks data file.."
     if ($os_type -eq "True"){
-        Download-File "https://msftdbprodsamples.codeplex.com/downloads/get/165399" "$setupFolder\AdventureWorks2012_Data.mdf"
+        Download-File "http://download-codeplex.sec.s-msft.com/Download/Release?ProjectName=msftdbprodsamples&DownloadId=165399&FileTime=129762331847030000&Build=21031" "$setupFolder\..\datasets\AdventureWorks2012_Data.mdf"
     }else {
         Write-Host "32 Bit system is not supported"
     }    
@@ -122,9 +122,9 @@ Add-PSSnapin SqlServerCmdletSnapin* -ErrorAction SilentlyContinue
 Import-Module SQLPS -WarningAction SilentlyContinue  
 
 $AttachCmd = @"  
-USE [master]  CREATE DATABASE [CB2016SQLSERVER] ON (FILENAME ='$setupFolder\AdventureWorks2012_Data.mdf') for ATTACH  
+USE [master]  CREATE DATABASE [AdventureWorks2012] ON (FILENAME ='$setupFolder\..\datasets\AdventureWorks2012_Data.mdf') for ATTACH  
 "@  
-Invoke-Sqlcmd $attachCmd -QueryTimeout 3600 -ServerInstance CB2016SQLSERVER  
+Invoke-Sqlcmd $attachCmd -QueryTimeout 3600 -ServerInstance $env:computername\CB2016SQLSERVER 
 If($?)  
 {  
 	Write-Host 'Attached database sucessfully!'  
@@ -133,5 +133,8 @@ else
 {  
 	Write-Host 'Attaching Failed!'  
 }
+
+
+Write-Host 'Installation completed.'
 
 
