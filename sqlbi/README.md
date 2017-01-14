@@ -2,7 +2,7 @@
 
 This is an intensive, fully hands-on job ready boot camp program that will prepare trainees to jump start their career in Business Intelligence and Data Analytics with focus on Microsoft SQL Server 2016. You can learn more about the program and signup from the [course home page](http://www.colaberry.com/bootcamp/sqlbi). 
 
-[![SQLBI Course Homepage](sqlbi.png "SQLBI Course Homepage")](http://www.colaberry.com/bootcamp/sqlbi)
+[![SQLBI Course Homepage](installations/sqlbi.png "SQLBI Course Homepage")](http://www.colaberry.com/bootcamp/sqlbi)
 
 ## PRE-REQUISITES
 
