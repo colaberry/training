@@ -17,6 +17,10 @@ The script will also create the following folder structure to organize all insta
 Note that SQL Server 2016 Server is not compatible with **32 bit machines**, though most of the client tools can be installed on a 32 bit machine. MUST require **64 bit machines** for the Server.
 ***
 
+### Video walk-through of the installation process
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=2AOcF88-RtY" target="_blank">
+<img src="http://img.youtube.com/vi/2AOcF88-RtY/0.jpg" alt="Video walkthrough of the installation" width="240" height="180" border="10" /></a>
+
 ### Downloading and installing all applications
 
 * Download the install_apps.ps1 to a local folder
