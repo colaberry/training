@@ -106,10 +106,11 @@ if((Test-Path "$setupFolder\AdventureWorks2012_Data.mdf") -eq $false)
     }    
 }
 
-(Get-Content $setupFolder\ConfigurationFile.ini).replace('USERNAMETBR', '$env:computername\$env:username') | Set-Content $setupFolder\ConfigurationFile_local.ini
+(Get-Content $setupFolder\ConfigurationFile.ini).replace('USERNAMETBR', "$env:computername\$env:username") | Set-Content $setupFolder\ConfigurationFile_local.ini
 
 Write-Host "Installing SQL Server.."
-Start-Process -FilePath "$setupFolder\SQLServer2016-SSEI-Dev.exe" -ArgumentList /ConfigurationFile=$($setupFolder)\ConfigurationFile_local.ini, /MediaPath=$($setupFolder), '/IAcceptSqlServerLicenseTerms', '/ENU'  -Wait
+Start-Process -FilePath "$setupFolder\SQLServer2016-SSEI-Dev.exe" -ArgumentList '/ConfigurationFile="c:\colaberry\training\sqlbi\installations\ConfigurationFile_local.ini"', '/MediaPath="c:\colaberry\training\sqlbi\installations"', '/IAcceptSqlServerLicenseTerms', '/ENU', '/QS'  -Wait
+
 
 Write-Host "Installing SSMS.."
 Start-Process -FilePath "$setupFolder\SSMS-Setup-ENU.exe" -ArgumentList '/install','/passive' -Wait
