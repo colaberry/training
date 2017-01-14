@@ -18,8 +18,8 @@ Note that SQL Server 2016 Server is not compatible with **32 bit machines**, tho
 ***
 
 ### Video walk-through of the installation process
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=2AOcF88-RtY" target="_blank">
-<img src="http://img.youtube.com/vi/2AOcF88-RtY/0.jpg" alt="Video walkthrough of the installation" width="240" height="180" border="10" /></a>
+Watch this video for a walk-through of the installation process. 
+[![Video Walkthrough of the installation](http://img.youtube.com/vi/2AOcF88-RtY/0.jpg)](http://www.youtube.com/watch?v=2AOcF88-RtY)
 
 ### Downloading and installing all applications
 
