@@ -1,6 +1,6 @@
 # Developing Business Intelligence(BI)/Enterprise Data Warehouse (EDW) Applications with Microsoft SQL Server 2016
 
-This is an intensive, fully hands-on job ready boot camp program that will prepare trainees to jump start their career in Business Intelligence and Data Analytics with focus on Microsoft SQL Server 2016. You can learn more about the program and signup from the [course home page](http://www.colaberry.com/bootcamp/sqlbi). 
+This is an intensive, fully hands-on job ready boot camp program that will prepare trainees to jump start their career in Business Intelligence and Data Analytics with focus on Microsoft SQL Server 2016. You can learn more about the program and signup from the [course home page](http://www.colaberry.com/bootcamp/sqlbi). This program is one of the most successful programs at Colaberry that has trained over 3000 dreamers from 38 different countries as of 1st of January 2017.
 
 [![SQLBI Course Homepage](installations/sqlbi.png "SQLBI Course Homepage")](http://www.colaberry.com/bootcamp/sqlbi)
 
@@ -14,7 +14,7 @@ This is an intensive, fully hands-on job ready boot camp program that will prepa
 * See the [installations](installations) folder for instructions on how to install all the software required for the program.
 
 ## Course Reviews
-This program is one of the most successful programs that has trained over 3000 dreamers as of 1st of January 2017. You can check out what the alumni says about the program [here on our Facebook page](https://www.facebook.com/pg/colaberryschoolofdataanalytics/reviews/?ref=page_internal).
+This program is one of the most successful programs that has trained over 3000 dreamers from 38 different countries as of 1st of January 2017. You can check out what the alumni says about the program [here on our Facebook page](https://www.facebook.com/pg/colaberryschoolofdataanalytics/reviews/?ref=page_internal).
 
 ## Questions?
  Visit the [course home page](http://www.colaberry.com/bootcamp/sqlbi) if you have any questions or call Colaberry Support Team at 972-992-1024.
