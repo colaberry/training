@@ -35,8 +35,9 @@ You will see the log in the blue pane as the script executes.
 
 ---
 ### Restart may be required
-It may require a restart once SQL Server is installed. When prompted, restart the computer and re-run the script. When the script is re-run, you may see the following error, that just states that all features have been already installed.
-![Reinstall error](reinstall_error.png "Re-install Error")
+It may require a restart once SQL Server is installed. When prompted, restart the computer and re-run the script. When the script is re-run, you may see the following error (exit message), that just states that all features have been already installed.
+
+>No features were installed during the setup execution. The requested features may already be installed. Please review the summary.txt log for further details
 ---
 
 ### Sample Status Log
