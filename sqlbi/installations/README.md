@@ -43,6 +43,32 @@ It may require a restart once SQL Server is installed. When prompted, restart th
 Please see the screenshot below for a sample status log. As you can see, some of the intermediate errors while attaching the sample database can be ignored.
 ![Reinstall error](log.png "Status log")
 
+### Installing on Windows 7 Machines
+SQL Server 2016 can still be installed on Windows 7 64 bit machines. However you may have an older version of Powershell on the machine and in that case, the installation may not succeed. You may see the following error:
+
+```powershell
+Method invocation failed because [System.Object[]] doesn't contain a method named 'replac
+e'.
+At line:109 char:57
+At line:109 char:57
++ (Get-Content $setupFolder\ConfigurationFile.ini).replace <<<< ('USERNAMETBR', "$env:com
+putername\$env:username") | Set-Content $setupFolder\ConfigurationFile_local.ini
+    + CategoryInfo          : InvalidOperation: (replace:String) [], RuntimeException
+    + FullyQualifiedErrorId : MethodNotFound
+```
+To fix this issue, you may follow the Quick Fix mentioned below. If the Quick Fix doesn't work, then you must upgrade the PowerShell version to latest version supported on Windows 7.
+
+#### Quick Fix
+* Comment out this line by adding # symbol at the beginning: (Get-Content $setupFolder\ConfigurationFile.ini).replace('USERNAMETBR', "$env:computername\$env:username") | Set-Content $setupFolder\ConfigurationFile_local.ini  
+* Replace "USERNAMETBR" with this PC's "UserName\ComputerName" in ConfigurationFile_local.ini file. We do NEED both username and computername along with "\".
+* Re-run the script
+
+#### Upgrade Powershell Version
+* Install .NET 4.5 FULL version (http://www.microsoft.com/en-us/download/details.aspx?id=30653)
+* Install Windows Management Framework (http://www.microsoft.com/en-us/download/details.aspx?id=40855)
+* Restart the computer and then
+* Run the script again
+
 
 ## Installing on Mac
 SQL Server 2016 installation is NOT supported on Mac. You may install Windows on Mac using Parallels Desktop or VMWare Fusion or similar application first and then use the script to install all applications.
