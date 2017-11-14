@@ -87,7 +87,7 @@ if((Test-Path "$setupFolder\SSDTSetup.exe") -eq $false)
 {
     Write-Host "Downloading SSDT installation file.."
     if ($os_type -eq "True"){
-        Download-File "https://download.microsoft.com/download/9/C/7/9C749FF7-7AD2-409A-BF75-69238295A668/Dev14/EN/SSDTSetup.exe" "$setupFolder\SSDTSetup.exe"
+        Download-File "https://download.microsoft.com/download/8/3/1/83160BBE-EBE5-41EE-9203-DD2BBF25A8ED/Dev14/EN/SSDTSetup.exe" "$setupFolder\SSDTSetup.exe"
     }else {
         Write-Host "32 Bit system is not supported"
     }    
