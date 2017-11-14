@@ -76,7 +76,7 @@ if((Test-Path "$setupFolder\SSMS-Setup-ENU.exe") -eq $false)
 {
     Write-Host "Downloading SSMS installation file.."
     if ($os_type -eq "True"){
-        Download-File "https://download.microsoft.com/download/3/1/D/31D734E0-BFE8-4C33-A9DE-2392808ADEE6/SSMS-Setup-ENU.exe" "$setupFolder\SSMS-Setup-ENU.exe"
+        Download-File "https://download.microsoft.com/download/3/C/7/3C77BAD3-4E0F-4C6B-84DD-42796815AFF6/SSMS-Setup-ENU.exe" "$setupFolder\SSMS-Setup-ENU.exe"
     }else {
         Write-Host "32 Bit system is not supported"
     }    
@@ -100,7 +100,7 @@ if((Test-Path "$setupFolder\..\datasets\AdventureWorks2012_Data.mdf") -eq $false
 {
     Write-Host "Downloading Adventuresworks data file.."
     if ($os_type -eq "True"){
-        Download-File "http://download-codeplex.sec.s-msft.com/Download/Release?ProjectName=msftdbprodsamples&DownloadId=165399&FileTime=129762331847030000&Build=21031" "$setupFolder\..\datasets\AdventureWorks2012_Data.mdf"
+        Download-File "http://download-codeplex.sec.s-msft.com/Download/Release?ProjectName=msftdbprodsamples&DownloadId=165399&FileTime=129762331847030000&Build=21063" "$setupFolder\..\datasets\AdventureWorks2012_Data.mdf"
     }else {
         Write-Host "32 Bit system is not supported"
     }    
