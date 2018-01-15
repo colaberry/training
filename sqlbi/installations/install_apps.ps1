@@ -100,7 +100,7 @@ if((Test-Path "$setupFolder\..\datasets\AdventureWorks2012_Data.mdf") -eq $false
 {
     Write-Host "Downloading Adventuresworks data file.."
     if ($os_type -eq "True"){
-        Download-File "http://download-codeplex.sec.s-msft.com/Download/Release?ProjectName=msftdbprodsamples&DownloadId=165399&FileTime=129762331847030000&Build=21063" "$setupFolder\..\datasets\AdventureWorks2012_Data.mdf"
+        Download-File "http://download-codeplex.sec.s-msft.com/Download/Release?ProjectName=msftdbprodsamples&DownloadId=165399&FileTime=129762331847030000&Build=21066" "$setupFolder\..\datasets\AdventureWorks2012_Data.mdf"
     }else {
         Write-Host "32 Bit system is not supported"
     }    
