@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>sql-server-2016-developer-edition</id>
+    <version>13.1801.3958.1</version>
+    <!-- <packageSourceUrl>Where is this Chocolatey package located (think GitHub)? packageSourceUrl is highly recommended for the community feed</packageSourceUrl>-->
+    <!-- owners is a poor name for maintainers of the package. It sticks around by this name for compatibility reasons. It basically means you. -->
+    <owners>Bala Krishna</owners>
+    <!-- ============================== -->
+
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <!-- This section is about the software itself -->
+    <title>Microsoft Sql Server 2016 Developer Edition (Install)</title>
+    <authors>Microsoft Corporation</authors>
+    <!-- projectUrl is required for the community feed -->
+    <projectUrl>https://my.visualstudio.com/Downloads?q=SQL%20Server%202016%20Developer</projectUrl>
+    <iconUrl>https://cdn.rawgit.com/ferventcoder/chocolatey-packages/59ad5e2e32c52fd2a45a9735f95a81368f9e5e85/icons/microsoft-sql-server.svg</iconUrl>
+    <copyright>Copyright Microsoft Corporation. All rights reserved.</copyright>
+    <licenseUrl>https://download.microsoft.com/download/F/D/5/FD5E5C28-6973-4273-8737-D69AA3BEA243/SQL_Server_2016_Licensing_Datasheet_EN_US.pdf</licenseUrl>
+    <docsUrl>https://docs.microsoft.com/en-us/sql/sql-server/what-s-new-in-sql-server-2016?view=sql-server-2017</docsUrl>
+    <tags>sqlserver2016developeredition notSilent</tags>
+    <summary>SQL SERVERE DEVELOPER EDITION</summary>
+    <description>SQL Server 2016 Developer Edition, released this year, is free. To learn more about the exciting new features in SQL Server 2016, read the datasheet http://download.microsoft.com/download/C/5/3/C53C3AEF-653C-4598-8721-D522E8AC6A3A/SQL_Server_2016_Everything_Built-In_Datasheet_EN_US.pdf. </description>
+    <releaseNotes>https://support.microsoft.com/en-us/help/3182545/sql-server-2016-service-pack-1-release-information</releaseNotes>
+	<dependencies>
+      <dependency id="KB2919355" version="1.0.20160915" />
+    </dependencies>
+
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
